@@ -1,0 +1,333 @@
+:root {
+  --bg-primary: #111;
+  /* Primary background color (dark) */
+  --bg-secondary: #222;
+  /* Secondary background color (medium dark) */
+  --bg-tertiary: #333;
+  /* Tertiary background color (light) */
+  --text-light: #fff;
+  /* Light text color */
+  --text-dark: #000;
+  /* Dark text color */
+  --accent-orange: #ff7043;
+  /* Orange accent color */
+  --accent-orange-dark: #ff5722;
+  /* Darker shade of orange */
+  --accent-green: #64dd17;
+  /* Green accent color */
+  --accent-green-dark: #aeea00;
+  /* Darker shade of green */
+  --accent-blue: #00bcd4;
+  /* Blue accent color */
+  --accent-blue-dark: #0097a7;
+  /* Darker shade of blue */
+  --accent-pink: #e91e63;
+  /* Pink accent color */
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  background: transparent;
+}
+
+html {
+  font-size: 1.5em;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding: 0.7em;
+  background-color: var(--bg-primary);
+  font-family: Sans-Serif;
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  color: var(--text-light);
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.SlidingPuzzleContainer {
+  max-width: fit-content;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.puzzleTitle {
+  font-size: 5rem;
+  color: var(--accent-pink);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.SlidingPuzzle {
+  user-select: none;
+  border-radius: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 0.2rem;
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  border: 5px solid var(--bg-tertiary);
+}
+
+.Tile {
+  background: var(--accent-orange);
+  border: 0.3rem solid var(--accent-orange-dark);
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: var(--text-light);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  margin: 0.4rem;
+}
+
+.Tile:hover {
+  transform: scale(1.05);
+}
+
+.moves,
+.timer {
+  font-size: 1rem;
+  margin: 1rem 0.5rem;
+  background: var(--accent-green);
+  padding: 0.6rem 1rem;
+  color: var(--text-light);
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+#movesnum {
+  background: var(--text-light);
+  padding: 0.2rem 0.5rem;
+  color: var(--text-dark);
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+button {
+  font-size: 1rem;
+  margin: 0.5rem;
+  padding: 0.6rem 1rem;
+  color: var(--text-light);
+  background: var(--accent-blue);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+  background: var(--accent-blue-dark);
+}
+
+#congratsFrame {
+  display: none;
+}
+
+.congratsFrame {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.congratsContent {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.congratsContent h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.congratsContent p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.congratsContent button {
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--accent-orange);
+  border: none;
+  color: var(--text-light);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.congratsContent button:hover {
+  background: var(--accent-orange-dark);
+}
+
+footer {
+  position: fixed;
+  font-size: 1rem;
+  bottom: 5%;
+  color: var(--text-light);
+}
+
+@media screen and (max-width: 370px) {
+  body {
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .SlidingPuzzleContainer {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .puzzleTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    text-align: center;
+  }
+
+  .SlidingPuzzle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0.1rem;
+    padding: 0.2rem;
+    border: 3px solid var(--bg-tertiary);
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .Tile {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.5rem;
+    margin: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .controls .newGameButton {
+    margin-left: 0.5rem;
+  }
+
+  .moves,
+  .timer,
+  button {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.6rem;
+    /* Adjusted margin */
+  }
+
+  #congratsFrame {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .congratsContent {
+    background: var(--bg-secondary);
+    padding: 0.5rem;
+    /* Reduced padding */
+    border-radius: 0.2rem;
+    /* Reduced border radius */
+    text-align: center;
+    color: var(--text-light);
+    /* Added border */
+    max-width: calc(100% - 2rem);
+    /* Adjusted max-width */
+    overflow: hidden;
+    /* Ensure text doesn't overflow */
+  }
+
+  .congratsContent h2 {
+    margin-bottom: 0.3rem;
+    /* Further reduced margin */
+    font-size: 0.8rem;
+    /* Reduced font size */
+  }
+
+  .congratsContent p {
+    margin-bottom: 0.3rem;
+    /* Further reduced margin */
+    font-size: 0.6rem;
+    /* Reduced font size */
+  }
+
+  .congratsContent button {
+    font-size: 0.5rem;
+    /* Further reduced font size */
+    padding: 0.2rem 0.5rem;
+    /* Further reduced padding */
+    border-radius: 0.2rem;
+    /* Reduced border radius */
+    cursor: pointer;
+  }
+
+  #newgame {
+    margin-left: 3.7rem;
+    /* Adjusted margin */
+  }
+
+  footer {
+    font-size: 0.4rem;
+    position: fixed;
+    width: 100%;
+    bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
