@@ -5,6 +5,7 @@ This repository features a 15-tile sliding puzzle game created using JavaScript,
 ## Features
 
 - **Interactive Gameplay:** Easily click or tap on tiles adjacent to the empty space to slide them into the slot.
+- **Amazing Sounds:** Enjoy a selection of sound effects that enhance the gameplay experience. Each tile movement and successful puzzle completion is accompanied by satisfying audio feedback.
 - **Responsive Design:** Optimized for various screen sizes, ensuring a seamless experience on both desktop and mobile devices.
 - **Stylish UI:** Enjoy a clean, modern interface with smooth sliding animations for an enhanced user experience.
 - **Randomized Start:** Each game begins with a unique, randomized tile arrangement for a fresh challenge every time.
