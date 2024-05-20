@@ -206,6 +206,15 @@ footer {
 }
 
 @media screen and (max-width: 370px) {
+  * {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove blue highlight */
+    outline: none;
+    /* Remove blue focus ring */
+  }
+
   body {
     padding: 0;
     justify-content: flex-start;
