@@ -1,37 +1,23 @@
 :root {
   --bg-primary: #111;
-  /* Primary background color (dark) */
   --bg-secondary: #222;
-  /* Secondary background color (medium dark) */
   --bg-tertiary: #333;
-  /* Tertiary background color (light) */
   --text-light: #fff;
-  /* Light text color */
   --text-dark: #000;
-  /* Dark text color */
   --accent-orange: #ff7043;
-  /* Orange accent color */
   --accent-orange-dark: #ff5722;
-  /* Darker shade of orange */
   --accent-green: #64dd17;
-  /* Green accent color */
   --accent-green-dark: #aeea00;
-  /* Darker shade of green */
   --accent-blue: #00bcd4;
-  /* Blue accent color */
   --accent-blue-dark: #0097a7;
-  /* Darker shade of blue */
   --accent-pink: #e91e63;
-  /* Pink accent color */
 }
 
 * {
   box-sizing: border-box;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  /* Remove blue highlight */
   outline: none;
-  /* Remove blue focus ring */
 }
 
 ::-webkit-scrollbar {
@@ -45,13 +31,13 @@ html {
 
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   font-size: 2rem;
-  padding: 0.7em;
+  padding: 0.1em;
   background-color: var(--bg-primary);
   font-family: Sans-Serif;
-  position: relative;
   margin: 0;
   height: 100vh;
   color: var(--text-light);
@@ -71,15 +57,16 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  /* Reduced margin-top */
 }
 
 .puzzleTitle {
   font-size: 5rem;
   color: var(--accent-pink);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 3rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
 }
 
 .SlidingPuzzle {
@@ -199,10 +186,11 @@ button:hover {
 }
 
 footer {
-  position: fixed;
-  font-size: 1rem;
-  bottom: 5%;
+  font-size: 0.7rem;
+  margin-top: auto;
+  margin-bottom: 5%;
   color: var(--text-light);
+  text-align: center;
 }
 
 @media screen and (max-width: 370px) {
