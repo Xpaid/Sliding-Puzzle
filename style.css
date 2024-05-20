@@ -28,6 +28,10 @@
 * {
   box-sizing: border-box;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove blue highlight */
+  outline: none;
+  /* Remove blue focus ring */
 }
 
 ::-webkit-scrollbar {
