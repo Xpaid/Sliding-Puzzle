@@ -103,7 +103,7 @@ ul {
 .moves,
 .timer {
   font-size: 1rem;
-  margin: 1rem 0.5rem;
+  margin: .6rem 0.5rem;
   background: var(--accent-green);
   padding: 0.6rem 1rem;
   color: var(--text-light);
@@ -188,13 +188,14 @@ button:hover {
 footer {
   font-size: 0.7rem;
   margin-top: auto;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
   color: var(--text-light);
   text-align: center;
 }
 
 @media screen and (max-width: 370px) {
   * {
+
     box-sizing: border-box;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -204,6 +205,7 @@ footer {
   }
 
   body {
+    height: 70vh;
     padding: 0;
     justify-content: flex-start;
     align-items: center;
@@ -216,11 +218,12 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   .puzzleTitle {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-top: 0rem;
     text-align: center;
   }
@@ -262,9 +265,10 @@ footer {
   .moves,
   .timer,
   button {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     padding: 0.2rem 0.4rem;
     margin: 0 0.6rem;
+    width: fit-content;
     /* Adjusted margin */
   }
 
@@ -323,6 +327,7 @@ footer {
   }
 
   footer {
+    position: fixed;
     font-size: 0.4rem;
     position: fixed;
     width: 100%;
